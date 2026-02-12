@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>緊急募款：改善惡劣生存環境</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333;
+            --urgent-red: #c0392b; 
+            --cash-green: #27ae60; /* Green for Cash */
+            --header-gradient: linear-gradient(135deg, #2c3e50 0%, #4a4a4a 100%);
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--header-gradient);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; margin-bottom: 10px; font-weight: bold;}
+        header p { opacity: 0.9; margin: 0; font-weight: normal; color: #ddd; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Alert Box */
+        .reality-check {
+            background-color: #fff;
+            border-left: 6px solid var(--urgent-red);
+            padding: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        
+        .reality-check h3 { margin-top: 0; color: var(--urgent-red); }
+
+        /* Problem Grid */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .problem-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-content { padding: 1.5rem; text-align: left; }
+        
+        .problem-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            color: #c0392b;
+        }
+        
+        .problem-desc { font-size: 0.95rem; color: #555; margin: 0; }
+
+        /* Slogan Box */
+        .slogan-box {
+            background: var(--urgent-red);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 20px rgba(192, 57, 43, 0.3);
+        }
+
+        .slogan-box h2 { font-size: 2rem; margin: 0 0 10px 0; font-weight: 800; }
+        .slogan-box p { font-size: 1.2rem; opacity: 0.9; margin: 0; }
+
+        /* Map Section (Photo Version) */
+        .location-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .location-section h3 { color: #333; margin-top: 0; }
+
+        .map-wrapper {
+            width: 100%;
+            /* Make it taller so the map photo is clear */
+            height: auto; 
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .map-img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Donation Section (Cash Version) */
+        .donate-section {
+            text-align: center;
+            background: white;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--cash-green); /* Green top border */
+        }
+
+        .btn-donate {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-donate:hover { opacity: 0.85; }
+
+        /* Green button for Cash */
+        .btn-cash { background-color: var(--cash-green); } 
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            color: #777;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .btn-donate { width: 100%; box-sizing: border-box; }
+            .slogan-box h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>現實並不美好</h1>
+        <p>這不是可愛的貓咪日記，這是我們的真實處境。</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="reality-check">
+            <h3>為什麼我們急需您的幫助？</h3>
+            <p>
+                目前黑旋風與 BB 的生活環境非常惡劣。照片不會說謊，我們沒有基本的寵物用品，生活空間狹窄且不衛生。
+                <b>我們急需資金改善以下三個生存問題。</b>
+            </p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <img src="bowl.jpg" alt="Bad food bowl situation" class="problem-img">
+                <div class="card-content">
+                    <span class="problem-title">🥣 缺乏衛生的食具</span>
+                    <p class="problem-desc">
+                        我們沒有乾淨的碗，只能將食物放在報紙或髒亂的平面上。這容易滋生細菌，導致我們生病。急需購買乾淨的食具。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <img src="cage.jpg" alt="Rusty cage" class="problem-img">
+                <div class="card-content">
+                    <span class="problem-title">⛓️ 生鏽擁擠的鐵籠</span>
+                    <p class="problem-desc">
+                        我們被迫待在狹窄、生鏽的籠子裡。活動空間嚴重不足，長期下來造成心理壓力和身體不適。我們需要一個更寬敞、安全的家。
+                    </p>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <img src="floor.jpg" alt="Sleeping on cold floor" class="problem-img">
+                <div class="card-content">
+                    <span class="problem-title">❄️ 冰冷的地板</span>
+                    <p class="problem-desc">
+                        沒有溫暖的貓窩，我們只能睡在冰冷的地板或單薄的舊毛巾上。在冬天非常難受，我們急需保暖的睡墊。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slogan-box">
+            <h2>別讓等待成為遺憾</h2>
+            <p>您的援手，是我們改變命運的唯一機會。</p>
+        </div>
+
+        <div class="location-section">
+            <h3>📍 我們的位置 (Location)</h3>
+            <p style="color:#666; font-size: 0.9rem; margin-bottom: 1rem;">
+                貓房：
+            </p>
+            
+            <div class="map-wrapper">
+                <img src="map_photo.jpg" alt="Location Map" class="map-img">
+            </div>
+        </div>
+
+        <div class="donate-section">
+            <h2 style="margin-top: 0; color: #333;">現金捐款 (Cash Donation)</h2>
+            <p style="margin-bottom: 1rem; color: #666;">
+                由於條件限制，我們目前<b>只接受現金捐款</b>。
+            </p>
+            <p style="margin-bottom: 2rem; color: #555; font-size: 0.95rem;">
+                請多多支持！
+            </p>
+            
+            <a href="mailto:s24302@wahyan.edu.hk" class="btn-donate btn-cash">📧 聯繫我們安排 (Contact Us)</a>
+            
+            </div>
+
+        <a href="Team8" class="back-link">⬅ 返回首頁</a>
+
+    </div>
+
+</body>
+</html>
